@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { dbService } from "fbase";
+import Smix from "components/Smix";
 
 const Home = ({ userObj }) => {
   console.log(userObj);
@@ -9,8 +10,8 @@ const Home = ({ userObj }) => {
   useEffect(() => {
     dbService.collection("smixs").onSnapshot((snapshot) => {
       const newArray = snapshot.docs.map((document) => ({
-        id: document.id,
-        ...document.data(),
+        id:document.id,
+        ...document.data(), 
       }));
       setSmixs(newArray);
     });
@@ -45,9 +46,11 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {smixs.map((smix) => (
-          <div key={smix.id}>
-            <h4>{smix.text}</h4>
-          </div>
+          <Smix 
+            key={smix.id}
+            smixObj={smix}
+            isOwner={smix.creatorId === userObj.uid}
+          />
         ))}
       </div>
     </div>
