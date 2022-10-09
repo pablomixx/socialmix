@@ -5,18 +5,15 @@ const Home = ({ userObj }) => {
   console.log(userObj);
   const [smix, setSmix] = useState("");
   const [smixs, setSmixs] = useState([]);
-  const getSmixs = async () => {
-    const dbSmixs = await dbService.collection("smixs").get();
-    dbSmixs.forEach((document) => {
-      const smixObject = {
-        ...document.data(),
-        id: document.id,
-      };
-      setSmixs((prev) => [smixObject, ...prev]);
-    });
-  };
+
   useEffect(() => {
-    getSmixs();
+    dbService.collection("smixs").onSnapshot((snapshot) => {
+      const newArray = snapshot.docs.map((document) => ({
+        id: document.id,
+        ...document.data(),
+      }));
+      setSmixs(newArray);
+    });
   }, []);
   const onSubmit = async (event) => {
     event.preventDefault();
