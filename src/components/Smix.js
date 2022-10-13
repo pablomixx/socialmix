@@ -44,7 +44,7 @@ const Smix = ({ smixObj, isOwner }) => {
             <>
                 <h4>{smixObj.text}</h4>
                 {smixObj.attachmentUrl && (
-                    <img src={smixObj.attachmentUrl} height="200px" />
+                    <img src={smixObj.attachmentUrl} height="200px" alt="Smix images" />
                 )}
                 {isOwner && (
                     <>
