@@ -1,4 +1,5 @@
-import React, { useState, storageService, dbService } from "react";
+import React, { useState } from "react";
+import { storageService, dbService } from "../fbase";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
 import { v4 } from "uuid";
 

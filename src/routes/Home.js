@@ -4,7 +4,6 @@ import Smix from "../components/Smix";
 import SmixFactory from "../components/SmixFactory";
 
 const Home = ({ userObj }) => {
-  console.log(userObj);
   const [smixs, setSmixs] = useState([]);
 
   useEffect(() => {
@@ -32,4 +31,5 @@ const Home = ({ userObj }) => {
     </>
   );
 };
+
 export default Home;

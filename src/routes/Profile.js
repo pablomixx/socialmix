@@ -1,7 +1,7 @@
 import React from "react"; 
-import { authService, dbService } from "../fbase";
+import { authService } from "../fbase";
 /* import { collection, getDocs, query, where, orderBy } from "@firebase/firestore"; */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Profile = ({ userObj, refreshUser }) => {
