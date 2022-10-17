@@ -1,11 +1,13 @@
 {
-  "main.js": "/socialmix/static/js/main.85b1b4b6.chunk.js",
-  "main.js.map": "/socialmix/static/js/main.85b1b4b6.chunk.js.map",
-  "static/js/1.e456e145.chunk.js": "/socialmix/static/js/1.e456e145.chunk.js",
-  "static/js/1.e456e145.chunk.js.map": "/socialmix/static/js/1.e456e145.chunk.js.map",
+  "main.css": "/socialmix/static/css/main.2e01d763.chunk.css",
+  "main.js": "/socialmix/static/js/main.1d5218aa.chunk.js",
+  "main.js.map": "/socialmix/static/js/main.1d5218aa.chunk.js.map",
+  "static/js/1.fecaa5d9.chunk.js": "/socialmix/static/js/1.fecaa5d9.chunk.js",
+  "static/js/1.fecaa5d9.chunk.js.map": "/socialmix/static/js/1.fecaa5d9.chunk.js.map",
   "runtime~main.js": "/socialmix/static/js/runtime~main.16e38920.js",
   "runtime~main.js.map": "/socialmix/static/js/runtime~main.16e38920.js.map",
+  "static/css/main.2e01d763.chunk.css.map": "/socialmix/static/css/main.2e01d763.chunk.css.map",
   "index.html": "/socialmix/index.html",
-  "precache-manifest.3ccee53b9eb1f43d61dc11cdb01f33bf.js": "/socialmix/precache-manifest.3ccee53b9eb1f43d61dc11cdb01f33bf.js",
+  "precache-manifest.6b450aef3075e6cda43a2e596ccf1d04.js": "/socialmix/precache-manifest.6b450aef3075e6cda43a2e596ccf1d04.js",
   "service-worker.js": "/socialmix/service-worker.js"
 }
