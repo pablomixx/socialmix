@@ -50,7 +50,9 @@ const SmixFactory = ({ userObj }) => {
         } = finishedEvent;
         setAttachment(result);
       };
-      reader.readAsDataURL(theFile);
+      if (Boolean(theFile)) {
+        reader.readAsDataURL(theFile);
+      }
   };
       
   const onClearAttachment = () => {setAttachment("")};

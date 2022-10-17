@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { dbService, storageService } from "../fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 const Smix = ({ smixObj, isOwner }) => {
@@ -31,26 +33,38 @@ const Smix = ({ smixObj, isOwner }) => {
     };
 
     return (
-        <div>
+        <div className="smix">
             {editing ? (
             <>
-                <form onSubmit={onSubmit}>
-                    <input onChange={onChange} value={newSmix} required />
-                    <input type="submit" value="Update Smix" />
+                <form onSubmit={onSubmit} className="container smixEdit">
+                    <input 
+                        onChange={onChange} 
+                        value={newSmix} 
+                        required
+                        placeholder="Edit your smix"
+                        autoFocus
+                        className="formInput"
+                    />
+                    <input type="submit" value="Update Smix" className="formBtn" />
                 </form>
-                <button onClick={toggleEditing}>Cancel</button>
+                <button onClick={toggleEditing} className="formBtn cancelBtn">Cancel</button>
             </>
         ) : (
             <>
-                <h4>{smixObj.text}</h4>
+                <h4 style={{ marginBottom : 10, marginTop : 20 }}>{smixObj.text}</h4>
                 {smixObj.attachmentUrl && (
                     <img src={smixObj.attachmentUrl} height="200px" alt="Smix images" />
                 )}
                 {isOwner && (
-                    <>
-                        <button onClick={onDeleteClick}>Delete Smix</button>
-                        <button onClick={toggleEditing}>Edit Smix</button>
-                    </>
+                    <div className="smix__actions">
+                        <span onClick={onDeleteClick}>
+                            <FontAwesomeIcon icon={faTrash} />
+                        </span>
+                        <span onClick={toggleEditing}>
+                            <FontAwesomeIcon icon={faPencilAlt}
+                            style={{ marginLeft : 15 }}/>
+                        </span>
+                    </div>
                 )}
             </>
         )}
