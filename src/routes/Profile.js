@@ -2,10 +2,10 @@ import React from "react";
 import { authService } from "../fbase";
 /* import { collection, getDocs, query, where, orderBy } from "@firebase/firestore"; */
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Profile = ({ userObj, refreshUser }) => {
-  const history = useHistory();
+  const history = useNavigate();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
   const onLogOutClick = () => {

@@ -17,9 +17,9 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <SmixFactory userObj={userObj} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {smixs.map((smix) => (
           <Smix 
             key={smix.id}
@@ -28,7 +28,7 @@ const Home = ({ userObj }) => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

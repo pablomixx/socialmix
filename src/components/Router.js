@@ -2,7 +2,7 @@ import React from "react";
 import {
   HashRouter as Router,
   Route,
-  Switch
+  Routes,
 } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
@@ -11,11 +11,10 @@ import Navigation from "./Navigation";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
+    <div>
     <Router>
       {isLoggedIn && <Navigation userObj={userObj} />}
-      <Switch>
-        {isLoggedIn ? (
-          <div>
+      <div 
             style={{
               maxWidth: 890,
               width: "100%",
@@ -24,22 +23,22 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
               display: "flex",
               justifyContent: "center",
             }}
-            <Route exact path="/">
-              <Home userObj={userObj} />
-            </Route>
-            <Route exact path="/profile">
-              <Profile refreshUser={refreshUser} userObj = {userObj} />
-            </Route>
-          </div>
-        ) : (
-          <div>
-            <Route exact path="/">
-              <Auth />
-            </Route>
-          </div>
-        )}
-      </Switch>
+            >
+        <Routes>
+          {isLoggedIn ? (
+            <>
+              <Route path="/" element={<Home userObj={userObj} />} />
+              <Route path="/profile" element={<Profile refreshUser={refreshUser} userObj = {userObj} />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Auth />} />
+            </>
+          )}
+        </Routes>
+      </div>
     </Router>
+    </div>
   );
 };
 export default AppRouter;
